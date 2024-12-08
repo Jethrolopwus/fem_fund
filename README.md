@@ -1,4 +1,5 @@
 USAGE:
+
 cd Backend
 Read through this below to rund the backend code.
 Foundry
@@ -14,6 +15,7 @@ Documentation
 https://book.getfoundry.sh/
 
 Usage
+
 Build
 $ forge build
 Test
@@ -34,6 +36,7 @@ $ anvil --help
 $ cast --help
 
 FRONT END USAGE:
+
 cd Frondend
 Install Dependencies:
 run: npm install

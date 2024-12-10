@@ -41,7 +41,7 @@ contract CommodityPool  {
         cycleEndTimestamp = block.timestamp + _cycleDuration;
     }
 
-    // Contribution Functions
+
     function contribute(uint256 amount) external cycleActive {
         require(amount > 0, "Must send a positive amount");
         require(
@@ -63,7 +63,6 @@ contract CommodityPool  {
         return contributions[user];
     }
 
-    // Purchase Functions
     function checkGoal() external onlyOwner {
         if (totalContributions >= contributionGoal || block.timestamp > cycleEndTimestamp) {
             goalAchieved = true;
@@ -76,7 +75,6 @@ contract CommodityPool  {
         emit PurchaseInitiated(totalContributions);
     }
 
-    // Distribution Functions
     function calculateShare(address user) public view returns (uint256) {
         require(totalContributions > 0, "No contributions made");
         return (contributions[user] * 1e18) / totalContributions;
@@ -99,7 +97,6 @@ contract CommodityPool  {
         }
     }
 
-    // Cycle Reset
     function resetCycle(uint256 _newGoal, uint256 _cycleDuration) external onlyOwner {
         for (uint256 i = 0; i < contributors.length; i++) {
             address user = contributors[i];

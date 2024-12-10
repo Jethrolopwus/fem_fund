@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import Home from './Components/Home';
 import Root from './Root';
+import Contribution from './pages/Contribution';
+import Admin from './pages/Admin';
+import Destribution from './pages/Destribution';
 
 
 class ErrorBoundary extends React.Component {
@@ -38,8 +41,12 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<Root/>}>
-        
         <Route index  element={<Home/>}/>
+        <Route path='/contribution' element={<Contribution/>}/>
+        <Route path='/status' element={<Admin/>}/>
+        <Route path='/destribute' element={<Destribution/>}/>
+
+
       </Route>
     )
   )

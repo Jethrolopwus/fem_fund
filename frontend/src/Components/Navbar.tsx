@@ -14,11 +14,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center shadow-sm justify-between p-3 md:p-10 md:mx-16">
+    <div className=" fixed top-0 left-0 right-0 bg-white z-50 flex  items-center shadow-sm justify-between p-3 md:p-10">
       
       <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2">
         <img src={logo} alt="logo" className="w-[36.5px] h-[32px]" />
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#a47f6e] to-[#5C4033] text-3xl font-bold">
+        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#a47f6e] to-[#5C4033] text-2xl font-bold">
           FemFund
         </h2>
       </Link>

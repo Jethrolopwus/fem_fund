@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.26;
 
 import "../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
-contract CommodityPool  {
+contract CommodityPool {
     address public owner;
     uint256 public contributionGoal;
     uint256 public totalContributions;
     uint256 public cycleEndTimestamp;
     bool public goalAchieved;
 
-    IERC20 public contributionToken; 
+    IERC20 public contributionToken;
     mapping(address => uint256) public contributions;
     address[] private contributors;
 
@@ -19,6 +19,7 @@ contract CommodityPool  {
     event PurchaseInitiated(uint256 totalContributions);
     event CommodityDistributed(address indexed user, uint256 amount);
     event CycleReset(uint256 newGoal, uint256 newEndTimestamp);
+
 
     modifier onlyOwner() {
         require(msg.sender == owner, "Only owner can call this function");
@@ -31,16 +32,15 @@ contract CommodityPool  {
     }
 
     constructor(
-        address _tokenAddress, 
+        address _tokenAddress,
         uint256 _goal,
         uint256 _cycleDuration
     ) {
         owner = msg.sender;
-        contributionToken = IERC20(_tokenAddress); 
+        contributionToken = IERC20(_tokenAddress);
         contributionGoal = _goal;
         cycleEndTimestamp = block.timestamp + _cycleDuration;
     }
-
 
     function contribute(uint256 amount) external cycleActive {
         require(amount > 0, "Must send a positive amount");
@@ -79,6 +79,7 @@ contract CommodityPool  {
         require(totalContributions > 0, "No contributions made");
         return (contributions[user] * 1e18) / totalContributions;
     }
+
 
     function distributeCommodity() external onlyOwner {
         require(goalAchieved, "Goal not met or cycle not ended");

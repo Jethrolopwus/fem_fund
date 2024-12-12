@@ -1,0 +1,2 @@
+deploy:
+	forge create --rpc-url https://rpc.sepolia-api.lisk.com --etherscan-api-key MVUSE7NIRPDNPHMS6YQZETVJAYP12FDBMH --verify --verifier blockscout --verifier-url https://sepolia-blockscout.lisk.com/api --private-key 43db3940e393854a1b3a267e7a9f0dc1a0d7ffabe28d14a12b5010a2949a3e6b  --broadcast src/CommodityPool.sol:CommodityPool --constructor-args "0x21726d1CBf49479CA2bc6E7688c6c591C0981F08" 1000 30

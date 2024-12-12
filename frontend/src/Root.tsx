@@ -5,7 +5,7 @@ import Footer from './Components/Footer'
 
 const Root = () => {
   return (
-    <div className='h-auto w-full'>
+    <div className='h-auto w-full '>
         <Navbar/>
         <Outlet/>
         <Footer/>

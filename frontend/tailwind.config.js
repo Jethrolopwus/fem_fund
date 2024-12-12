@@ -6,9 +6,8 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'custom-gradient': 'linear-gradient(118.17deg, #4E7836 2.08%, #90DE64 100.89%)',
-        'custom-svg': "url('/src/assets/mata.jpeg')",
+      backgroundColor: {
+        'custom-bg': "#016AD3",
       },
     },
   },

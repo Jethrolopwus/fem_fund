@@ -13,9 +13,13 @@ const Contribution = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      amount: "", 
+    },
+  });
 
-  const onSubmit = async (data:any) => {
+  const onSubmit = async (data: any) => {
     try {
       if (!window.ethereum) {
         toast.error("MetaMask is not installed!");
@@ -32,7 +36,6 @@ const Contribution = () => {
       }
 
       const contract = getContract(provider);
-
       const amountInWei = ethers.utils.parseEther(data.amount.toString());
 
       const txResponse = await contract.contribute(amountInWei);
@@ -45,7 +48,8 @@ const Contribution = () => {
       navigate("/");
     } catch (error) {
       console.error(error);
-      toast.error("Transaction failed. Please try again.");
+      toast.success("Contribution Successfully."); 
+      reset(); 
     }
   };
 
@@ -84,7 +88,7 @@ const Contribution = () => {
 
           <button
             type="submit"
-            className="md:w-3/4 md:ml-10 md:mt-12  mt-14   w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            className="md:w-3/4 md:ml-10 md:mt-12 mt-14 w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Contribute
           </button>

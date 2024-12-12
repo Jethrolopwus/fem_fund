@@ -2,6 +2,8 @@ import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import {useTheme} from '../context/theme.tsx';
+import { Sun, Moon, } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +14,7 @@ const Navbar = () => {
   const handleLinkClick = () => {
     setIsOpen(false); 
   };
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <div className=" fixed top-0 left-0 right-0 bg-white z-50 flex  items-center shadow-sm justify-between p-3 md:p-10">
@@ -43,6 +46,17 @@ const Navbar = () => {
         >
        Destribute
         </Link>
+        <button
+          onClick={toggleTheme}
+          className="w-9 h-9 rounded-full bg-gray-100 dark:bg-zinc-800 flex items-center justify-center"
+          aria-label="Toggle theme"
+        >
+          {isDark ? (
+            <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+          ) : (
+            <Sun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+          )}
+        </button>
       </div>
       <div className="md:hidden flex items-center">
         <button onClick={toggleMenu} aria-label="Toggle menu">
@@ -50,6 +64,17 @@ const Navbar = () => {
             <HiX className="text-black w-6 h-6" />
           ) : (
             <HiMenu className="text-black w-6 h-6" />
+          )}
+        </button>
+        <button
+          onClick={toggleTheme}
+          className="w-9 h-9 rounded-full bg-gray-100 dark:bg-zinc-800 flex items-center justify-center"
+          aria-label="Toggle theme"
+        >
+          {isDark ? (
+            <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+          ) : (
+            <Sun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
           )}
         </button>
       </div>

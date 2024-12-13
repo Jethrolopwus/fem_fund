@@ -28,7 +28,7 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen overflow-x-hidden mt-20 md:mt-32 ">
+    <div className="min-h-screen overflow-x-hidden mt-20 md:mt-32 dark:bg-white ">
       <section className="pb-10">
       <div className="flex flex-wrap md:flex-nowrap mx-8 justify-center items-center gap-10">
         <div className="w-full md:w-[640px] text-center md:text-center">

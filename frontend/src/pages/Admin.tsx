@@ -25,7 +25,7 @@ const Admin = () => {
   return (
     <div>
         <section className="h-screen">
-       <div className="max-w-md mx-auto p-8 py-10 bg-white shadow-md rounded-lg mt-8">
+       <div className="max-w-md mx-auto p-8 py-10 bg-white shadow-md rounded-lg mt-8 md:mt-40">
       <h2 className="text-2xl font-semibold mb-4 text-center">Reset Cycle</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>

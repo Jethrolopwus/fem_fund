@@ -17,7 +17,7 @@ const Navbar = () => {
   const { isDark, toggleTheme } = useTheme();
 
   return (
-    <div className=" fixed top-0 left-0 right-0 bg-white z-50 flex  items-center shadow-sm justify-between p-3 md:p-10">
+    <div className=" fixed top-0 left-0 right-0 bg-white z-50 flex dark:bg-slate-100  items-center shadow-sm justify-between p-3 md:p-10">
       
       <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2">
         <img src={logo} alt="logo" className="w-[36.5px] h-[32px]" />

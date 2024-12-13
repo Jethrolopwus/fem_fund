@@ -105,9 +105,6 @@ const Home = () => {
           <p className="mt-4 text-base md:text-xl font-normal leading-6">
             Join a growing community of women building stronger financial habits and achieving their goals.
           </p>
-          <div className="flex flex-row mt-4 gap-4 items-center justify-center md:justify-start">
-            <w3m-button />
-          </div>
         </div>
       </section>
     </div>

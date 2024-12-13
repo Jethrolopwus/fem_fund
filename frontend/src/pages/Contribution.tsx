@@ -48,7 +48,7 @@ const Contribution = () => {
       navigate("/");
     } catch (error) {
       console.error(error);
-      toast.success("Contribution Successfully."); 
+      toast.error("Transaction failed, Please try again Later."); 
       reset(); 
     }
   };

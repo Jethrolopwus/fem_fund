@@ -35,7 +35,7 @@ const Navbar = () => {
           Contribute
         </Link>
         <Link
-          to="/status"
+          to="/event"
           className="text-transparent bg-clip-text bg-gradient-to-r from-[#a47f6e] to-[#5C4033] text-2xl hover:underline hover:text-gray-400"
         >
          Status
@@ -44,7 +44,7 @@ const Navbar = () => {
           to="/destribute"
           className="text-transparent bg-clip-text bg-gradient-to-r from-[#a47f6e] to-[#5C4033] text-2xl hover:underline hover:text-gray-400"
         >
-       Destribute
+       Distribute
         </Link>
         <button
           onClick={toggleTheme}

@@ -86,14 +86,14 @@
                     for (uint256 i = 0; i < contributors.length; i++) {
                         address user = contributors[i];
                         uint256 share = calculateShare(user);
-                        uint256 amount = (share * totalContributions) / 1e18;
+                        uint256 amount = (share * totalContributions) / 10e18;
 
                         require(
                             contributionToken.transfer(user, amount),
                             "Token transfer failed"
                         );
 
-                        emit CommodityDistributed(user, amount);
+                        emit CommodityDistributed(user, amount/10e18);
                     }
                 }
 

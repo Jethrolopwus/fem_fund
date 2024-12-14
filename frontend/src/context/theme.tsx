@@ -1,9 +1,18 @@
-import  { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-const ThemeContext = createContext();
+interface ThemeContextType {
+  isDark: boolean;
+  toggleTheme: () => void;
+}
 
-export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(true); // Default to dark mode
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+interface ThemeProviderProps {
+  children: ReactNode; 
+}
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+  const [isDark, setIsDark] = useState<boolean>(true);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark);
@@ -20,7 +29,8 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-export const useTheme = () => {
+
+export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error('useTheme must be used within a ThemeProvider');

@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 import { getContract } from "../Utils/ethersUtils";
+import { ABI, CONTRACT_ADDRESS } from "../Utils/contractConfig";
 
 const Contribution = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Contribution = () => {
         return;
       }
 
-      const contract = getContract(provider);
+      const contract = getContract(provider, CONTRACT_ADDRESS, ABI);
       const amountInWei = ethers.utils.parseEther(data.amount.toString());
 
       const txResponse = await contract.contribute(amountInWei);

@@ -41,10 +41,10 @@ const Navbar = () => {
          Status
         </Link>
         <Link
-          to="/destribute"
+          to="/getdistribute"
           className="text-transparent bg-clip-text bg-gradient-to-r from-[#a47f6e] to-[#5C4033] text-2xl hover:underline hover:text-gray-400"
         >
-       Distribute
+       Total Contribution
         </Link>
         <button
           onClick={toggleTheme}
@@ -95,18 +95,18 @@ const Navbar = () => {
          Contribute
         </Link>
         <Link
-          to="/status"
+          to="/event"
           className="text-black block px-4 py-2 bg-white border rounded-lg mb-2 text-center"
           onClick={handleLinkClick}
         >
          Status
         </Link>
         <Link
-          to="/goal"
+          to="/getdistribute"
           className="text-black block px-4 py-2 bg-white border rounded-lg mb-2 text-center"
           onClick={handleLinkClick}
         >
-         Goal
+         Total Contribution
         </Link>
         <div className="mx-auto">
         <w3m-button />

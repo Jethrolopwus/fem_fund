@@ -17,18 +17,18 @@ const Footer = () => {
 
           <ul className="flex flex-wrap justify-center items-center gap-4 text-sm font-medium text-white">
             <li>
-              <a href="#" className="hover:underline">
-                About
+              <a href="/contribution" className="hover:underline">
+                Contribute
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                Contact
+              <a href="/event" className="hover:underline">
+               Status
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                View
+              <a href="/getdistribute" className="hover:underline">
+                Total Contribution
               </a>
             </li>
           </ul>

@@ -14,6 +14,7 @@ import Admin from './pages/Admin';
 import Destribution from './pages/Destribution';
 import { ThemeProvider } from './context/theme';
 import EventListener from './pages/EventListener';
+import GetContribution from './pages/GetContributions';
 
 
 interface ErrorBoundaryProps {
@@ -55,6 +56,8 @@ function App() {
         <Route path="/status" element={<Admin />} />
         <Route path="/destribute" element={<Destribution />} />
         <Route path="/event" element={<EventListener />} />
+        <Route path="/getdistribute" element={<GetContribution />} />
+
 
 
       </Route>

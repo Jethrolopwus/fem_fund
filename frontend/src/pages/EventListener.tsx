@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { getContract } from "../Utils/ethersUtils";
+import { ABI, CONTRACT_ADDRESS } from "../Utils/contractConfig";
 
 interface Contribution {
   user: string;
@@ -18,7 +19,7 @@ const EventListener = () => {
       }
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const contract = getContract(provider);
+      const contract = getContract(provider, CONTRACT_ADDRESS, ABI);
 
       try {
 
@@ -69,7 +70,7 @@ const EventListener = () => {
         <table className="min-w-full bg-white shadow-md rounded-lg">
           <thead className="bg-blue-600">
             <tr>
-              <th className="px-4 py-2 text-left text-white text-2xl font-medium">Contributor</th>
+              <th className="px-4 py-2 text-left text-white text-2xl font-medium">Contributor's Address</th>
               <th className="px-4 py-2 text-left text-white text-2xl font-medium">Amount (ETH)</th>
             </tr>
           </thead>
